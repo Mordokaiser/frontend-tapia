@@ -77,6 +77,23 @@ const addPhone = async () => {
             }
         });
         console.log('Teléfono agregado exitosamente:', response.data);
+        //recargar pagina completa despues de medio segundo
+        setTimeout(() => {
+            location.reload();
+        }, 500);
+        /*
+        nota, esto es una mala practica, lo ideal seria utilizar una tecnologia como Pinea,
+        lo ideal es que pinea guarde la informacion en el localstorage, que al guardar la informacion
+        en este punto, se actualize la informacion de los telefonos en Piniea,
+
+        por otra parte la tabla de telefonos, deberia consumir la lista de telefonos que existe en pinea,
+        y que al editar, elimiar, esta mande la informacion al backend y luego le diga al pinea que actualize 
+        su informacion almacenada, y de esa forma la tabla tambien se actualizaria.
+        
+
+        por otra parte la base url deberia ser una variable de entorno de Astro, para que no este expuesta.
+        eso quiere decir que falta un archivo .env en el frontend, y que aprendas a llamar las variables del .env en el frontend
+        */
     } catch (error) {
         console.error('Error al agregar el teléfono:', error);
     }
