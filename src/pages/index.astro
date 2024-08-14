@@ -12,10 +12,10 @@ import PrincipalTemplate from "../components/principalTemplate.vue";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
-    <PrincipalTemplate client:load>
+  <body  class="bg-slate-600" >
+    <PrincipalTemplate client:load >
       <OpcionesCrud client:load/>
-      <CrudTable client:load/>
+      <CrudTable client:load class="mb-8 overflow"/>
     </PrincipalTemplate>
   </body>
 </html>
